@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+
+.logo {
+  height: 100px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  top: 20px;
+}
+
+.nav-items > ul > li {
+  margin: 5px;
+  font-size: 15px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  right: 10px;
+  &:hover {
+    transform: scale(0.9);
+  }
+  cursor: pointer;
+}
+
+.nav-items > ul > li > a {
+  text-decoration: none;
+  color: darkgreen;
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+i.material-icons {
+  position: relative;
+  left: 50px;
+  top: 5px;
+  color: darkgreen;
+}
+
+.nav-items {
+  position: relative;
+  right: 20px;
+  top: 20px;
+}
+
+.name {
+  position: relative;
+  right: 150px;
+  top: 20px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+}
+
+.card {
+  width: 270px;
+  height: 237px;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  &:hover {
+    transform: scale(0.9);
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  width: 1300px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 50px;
+  height: max-content;
+  left: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card > .img > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+.card-content {
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+  left: 20px;
+  display: flexbox;
+  width: max-content;
+  color: black;
+}
+
+.card-content > h2 {
+  margin-bottom: -5px;
+}
+.card-content > h2 {
+  text-decoration: none;
+}
+
+.inline {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.card-content > h3 {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.footer {
+  background-color: orange;
+  height: 200px;
+  position: relative;
+  top: 100px;
+}
+
+@media (max-width: 600) {
+  .name {
+    position: relative;
+    right: 200px;
+    top: 20px;
+    font-family: 'Montserrat', helvetica, arial, sans-serif;
+  }
+}
+
+.shimmer {
+  width: 270px;
+  height: 237px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.block {
+  position: relative;
+  transform: rotate(-80deg) skew(0deg, 30deg);
+  background-color: white;
+  animation: shim 1s linear infinite;
+  height: 60px;
+  width: 350px;
+  top: 100px;
+  right: 220px;
+  opacity: 0.6;
+}
+
+@keyframes shim {
+  0% {
+    right: 220px;
+  }
+
+  100% {
+    right: -300px;
+  }
+}
+
+.shimmer-container {
+  display: flex;
+  width: 1300px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 50px;
+  height: max-content;
+  left: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.top-rated {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  height: 50px;
+  width: 100px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  font-size: medium;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: white;
+}
+
+.btn {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  background-color: #f0f0f0;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.search-filter {
+  position: relative;
+  left: 250px;
+  top: -10px;
+}
+.search-filter > .search {
+  height: 30px;
+  width: 200px;
+  position: relative;
+  left: 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  margin-right: 8px;
+}
+
+.search-filter > .filter {
+  height: 30px;
+  width: 100px;
+  position: relative;
+  left: 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  cursor: pointer;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  top: 20px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+}
+
+.sub-content {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  top: 30px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  height: 200px;
+  border-radius: 20px;
+  padding: 30px;
+  font-size: small;
+}
+
+.costfortwo {
+  display: inline-block;
+}
+
+.rating > img {
+  height: 22px;
+  position: relative;
+  padding: 5px;
+  top: 12px;
+}
+
+.rating > .costfortwo {
+  position: relative;
+  left: 10px;
+}
+
+.sub-deals {
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  padding: 10px;
+  position: relative;
+}
+
+.deals {
+  position: relative;
+  top: 50px;
+  display: grid;
+  grid-auto-flow: column;
+  width: 680px;
+  overflow: hidden;
+}
+
+.restuarant {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  justify-content: space-between;
+}
+
+.deal-heading {
+  position: relative;
+  top: 60px;
+}
+
+.content > .name {
+  position: relative;
+  right: 200px;
+}
+
+.restuarant > .search {
+  position: relative;
+  top: 50px;
+}
+
+.restuarant > .search > input {
+  width: 600px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+}
+
+.restuarant > .search > button {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  align-items: center;
+}
+
+.toppick {
+  position: relative;
+
+  display: grid;
+  grid-auto-flow: column;
+  width: 750px;
+  overflow: hidden;
+}
+.sub-toppick {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  position: inherit;
+}
+
+.sub-toppick > img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.recom {
+  height: 100px;
+  width: 750px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.recom-head {
+  position: relative;
+  right: 300px;
+  cursor: pointer;
+}
+
+.recom-container {
+  display: block;
+}
+
+#root > div > div.body > div.card-container > a {
+  text-decoration: none;
+}
+
+.divider {
+  height: 1px;
+  width: 800px;
+  background-color: black;
+  margin-top: 30px;
+}
+
+.menu_head {
+  position: relative;
+  left: 300px;
+}
+
+.forward {
+  position: relative;
+  top: -200px;
+  color: black;
+  right: -750px;
+}
+
+.backward {
+  position: relative;
+  top: -230px;
+  color: black;
+  right: 150px;
+}
+
+.forwards {
+  position: relative;
+  top: -38px;
+  color: black;
+  right: -750px;
+}
+
+.backwards {
+  position: relative;
+  top: -68px;
+  color: black;
+  right: 150px;
+}
