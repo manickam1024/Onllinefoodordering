@@ -2,75 +2,66 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
+import data from '../utils/useReslist'
+import onlinestatus from '../utils/onlinestatus'
 
 const Body = () => {
-  const [reslist, setreslist] = useState([]) //soo here we was passing our mock data to the reslist as inital state soo if i click on the button the reslist is filterd and  at card-container  the resslist var is used
-  const [filterd, setfilterd] = useState([])
+  const [reslist, filterd, setfilterd] = data()
+
+  const status = onlinestatus()
+
+  console.log(status)
+
+  if (status == false) {
+    return <h1>opps! you are offline</h1>
+  }
 
   const [v, setv] = useState('')
-  console.log(v)
-
-  useEffect(() => {
-    after()
-  }, [])
-
-  async function after() {
-    try {
-      const newdata = await fetch(
-        'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
-      )
-      const json = await newdata.json()
-
-      setreslist(
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      )
-      setfilterd(
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      )
-    } catch (e) {
-      console.log('failed to fetch')
-    }
-  }
 
   if (!reslist.length) {
     return <Shimmer />
   }
 
   return (
-    <div className="body">
-      <button
-        className=" top-rated"
-        onClick={function f() {
-          const fil = reslist.filter((res) => res.info.avgRating >= 4.5)
-          setfilterd(filtered)
-        }}
-      >
-        filter
-      </button>
-      <div className="search-filter">
-        <input
-          type="text"
-          className="search"
-          value={v}
-          onChange={(x) => setv(x.target.value)}
-        />
-        <button
-          className="filter"
-          onClick={() => {
-            const result = reslist.filter((res) =>
-              res.info.name.toLowerCase().includes(v.toLowerCase())
-            )
+    <div
+      className="body"
+      style={{ fontFamily: "'Montserrat', helvetica, arial, sans-serif" }}
+    >
+      <div className="search-filter m-9 flex justify-center w-[1200px] ">
+        <div className="search-div relative right-44">
+          {' '}
+          <input
+            type="text"
+            className="border-soild  mr-10 w-[500px] h-10 rounded-lg bg-gray-100"
+            value={v}
+            onChange={(x) => setv(x.target.value)}
+          />
+          <button
+            className="filter "
+            onClick={() => {
+              const result = reslist.filter((res) =>
+                res.info.name.toLowerCase().includes(v.toLowerCase())
+              )
 
-            setfilterd(result)
+              setfilterd(result)
+            }}
+          >
+            search
+          </button>
+        </div>
+        <button
+          className=" top-rated "
+          onClick={function f() {
+            const fil = reslist.filter((res) => res.info.avgRating >= 4.5)
+            setfilterd(fil)
           }}
         >
-          search
+          <i className="material-icons p-3 inline-block">filter_alt</i>
+          <h1 className="inline-block relative top-[-5px]">filter</h1>
         </button>
       </div>
 
-      <div className="card-container">
+      <div className="card-container flex flex-wrap  w-[1350px] justify-center  relative left-[100px]  shadow-[0_0px_1px_1px_rgba(0,0,0,0.2)] pt-5 pb-5 rounded-2xl">
         {filterd.map((d) => (
           <Link to={'/restuarants/' + d.info.id} key={d.info.id}>
             <Card resdata={d} key={d.info.id} />

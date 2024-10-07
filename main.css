@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
 
 .logo {
   height: 100px;
@@ -413,4 +418,4 @@ html {
   top: -68px;
   color: black;
   right: 150px;
-}
+} */
