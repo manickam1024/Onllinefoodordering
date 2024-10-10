@@ -8,6 +8,7 @@ import About from './components/About'
 import Error from './components/err'
 import Profile from './components/profile'
 import Cart from './components/Cart'
+import { Shimmer_res } from './utils/Shimmer_res'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -37,7 +38,7 @@ const route = createBrowserRouter([
       {
         path: '/Restuarants/:resid',
         element: (
-          <Suspense fallback={<h1>loding.......</h1>}>
+          <Suspense fallback={<Shimmer_res />}>
             <Restaurants />
           </Suspense>
         ),

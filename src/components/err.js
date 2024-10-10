@@ -9,6 +9,7 @@ const Error = () => {
       <h1>gotta error</h1>
       <h2>{err.status}</h2>
       <h2>{err.statusText}</h2>
+      {console.log(err)}
     </div>
   )
 }

@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react'
 import Card from './Card'
-import Shimmer from './Shimmer'
-import { Link } from 'react-router-dom'
+import { Shimmer } from '../utils/Shimmer'
+import { createRoutesFromChildren, Link } from 'react-router-dom'
 import data from '../utils/useReslist'
 import onlinestatus from '../utils/onlinestatus'
+import { is_opened } from '../utils/higher-ord-comp'
 
 const Body = () => {
   const [reslist, filterd, setfilterd] = data()
 
   const status = onlinestatus()
-
+  const hover = '0.9'
   console.log(status)
+  const Opened = is_opened(<Card />)
 
   if (status == false) {
     return <h1>opps! you are offline</h1>
@@ -64,7 +66,11 @@ const Body = () => {
       <div className="card-container flex flex-wrap  w-[1350px] justify-center  relative left-[100px]  shadow-[0_0px_1px_1px_rgba(0,0,0,0.2)] pt-5 pb-5 rounded-2xl">
         {filterd.map((d) => (
           <Link to={'/restuarants/' + d.info.id} key={d.info.id}>
-            <Card resdata={d} key={d.info.id} />
+            {d.info.aggregatedDiscountInfoV3?.header ? (
+              <Opened resdata={d} />
+            ) : (
+              <Card resdata={d} key={d.info.id} hover={hover} />
+            )}
           </Link>
         ))}
       </div>

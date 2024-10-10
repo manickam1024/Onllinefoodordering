@@ -1,4 +1,4 @@
-import Shimmer from './Shimmer'
+import { Shimmer_res } from '../utils/Shimmer_res'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import userestaurant from '../utils/useRestaurant'
@@ -16,7 +16,7 @@ const Restaurants = () => {
   const resinfo = userestaurant(resid)
 
   if (!resinfo) {
-    return <Shimmer />
+    return <Shimmer_res />
   }
 
   const {
@@ -140,7 +140,7 @@ const Restaurants = () => {
               {' '}
               {toppicks.map((m) => (
                 <div
-                  className="sub-toppick  
+                  className="sub-toppick  relative
               "
                   style={{ right: `${position}px` }}
                   key={m.bannerId}
@@ -186,7 +186,7 @@ const Restaurants = () => {
                     isvisible ? setisvisble(false) : setisvisble(true)
                   }}
                 >
-                  <div className="menu_head w-[800px]">
+                  <div className="menu_head w-[800px] ">
                     <h3>{m.card.card.title}</h3>
                   </div>
                 </div>
