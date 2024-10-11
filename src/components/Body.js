@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Card from './Card'
 import { Shimmer } from '../utils/Shimmer'
-import { createRoutesFromChildren, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import data from '../utils/useReslist'
 import onlinestatus from '../utils/onlinestatus'
 import { is_opened } from '../utils/higher-ord-comp'
@@ -69,7 +69,7 @@ const Body = () => {
             {d.info.aggregatedDiscountInfoV3?.header ? (
               <Opened resdata={d} />
             ) : (
-              <Card resdata={d} key={d.info.id} hover={hover} />
+              <Card resdata={d} key={d.info.id} />
             )}
           </Link>
         ))}

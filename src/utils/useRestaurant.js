@@ -1,24 +1,29 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { menu } from './srcs'
 
-const userestaurant = (resid) => {
-  const [resinfo, setresinfo] = useState(null)
+const useRestaurant = (resid) => {
+  const [resInfo, setResInfo] = useState(null)
 
   useEffect(() => {
-    data()
-  }, [])
+    if (resid) {
+      fetchData()
+    }
+  }, [resid]) // Add resid as a dependency
 
-  async function data() {
-    const data = await fetch(
-      menu + resid + '&catalog_qa=undefined&submitAction=ENTER'
-    )
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        `${menu}${resid}&catalog_qa=undefined&submitAction=ENTER`
+      )
+      const json = await response.json()
 
-    const json = await data.json()
-
-    setresinfo(json)
+      setResInfo(json)
+    } catch (error) {
+      console.error('Error fetching data: ', error)
+    }
   }
 
-  return resinfo
+  return resInfo
 }
 
-export default userestaurant
+export default useRestaurant
