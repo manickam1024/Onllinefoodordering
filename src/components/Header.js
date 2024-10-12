@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { IMG_LOGO } from '../utils/srcs'
 import { Link } from 'react-router-dom'
+import context from '../utils/context'
 const Header = () => {
   const [s, news] = useState('login')
+
+  const d = useContext(context)
 
   return (
     <div
@@ -61,6 +64,8 @@ const Header = () => {
             </i>
             <Link to="/Profile">Profiles</Link>
           </li>
+
+          <li className="pt-[6px] text-orange-400">Welcome {d.username}!</li>
         </ul>
       </div>
     </div>

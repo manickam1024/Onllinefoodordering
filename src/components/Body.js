@@ -26,7 +26,7 @@ const Body = () => {
 
   return (
     <div
-      className="body"
+      className="body overflow-x-hidden"
       style={{ fontFamily: "'Montserrat', helvetica, arial, sans-serif" }}
     >
       <div className="search-filter m-9 flex justify-center w-[1200px] ">
@@ -34,7 +34,7 @@ const Body = () => {
           {' '}
           <input
             type="text"
-            className="border-soild  mr-10 w-[500px] h-10 rounded-lg bg-gray-100"
+            className="border-soild  mr-10 w-[500px] h-10 rounded-lg bg-gray-100 p-5"
             value={v}
             onChange={(x) => setv(x.target.value)}
           />

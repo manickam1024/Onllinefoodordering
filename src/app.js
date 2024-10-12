@@ -9,15 +9,19 @@ import Error from './components/err'
 import Profile from './components/profile'
 import Cart from './components/Cart'
 import { Shimmer_res } from './utils/Shimmer_res'
+import context from './utils/context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 export const App = () => (
-  <div className="App">
-    <Header />
-    <Outlet />
-    <Footer />
-  </div>
+  //modifying context value dynamically by fetching "mani " from login
+  <context.Provider value={{ username: 'mani' }}>
+    <div className="App">
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  </context.Provider>
 )
 
 const Restaurants = lazy(() => import('./components/Restaurant'))

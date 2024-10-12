@@ -25,7 +25,7 @@ const Restaurants = () => {
   return (
     <div>
       <div
-        className="restaurant w-[1000px] relative left-[280px] shadow-lg top-11 flex-col items-center flex"
+        className="restaurant w-[1000px] relative left-[280px] shadow-lg top-11 flex-col items-center flex overflow-x-hidden"
         style={{ fontFamily: "'Montserrat', helvetica, arial, sans-serif" }}
       >
         <Summary resinfo={resinfo} />
@@ -56,20 +56,20 @@ const Restaurants = () => {
         {toppicks && <Toppicks resinfo={resinfo} />}
 
         <div className="flex w-2/12 justify-between">
-          <div>
+          <div className="flex justify-between w-16 ">
             {' '}
             <input
               type="radio"
-              className=" size-6 "
+              className=" size-6 accent-green-600"
               onClick={() => setveg(true)}
               name="btn"
             />
             veg
           </div>
-          <div>
+          <div className="flex justify-between w-[90px] ">
             <input
               type="radio"
-              className=" size-6 "
+              className=" size-6 accent-red-500 mr-2"
               name="btn"
               onClick={() => setveg(false)}
             />{' '}

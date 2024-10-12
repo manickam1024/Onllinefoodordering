@@ -8,7 +8,7 @@ export const is_opened = () => {
     return (
       <div className="flex flex-wrap hover:scale-[0.9] ">
         {' '}
-        <label className=" absolute ml-6 mt-6 bg-black text-white text-sm z-0">
+        <label className=" absolute ml-6 mt-6 bg-black text-white text-xs z-0 px-2 rounded-r-lg">
           {header}
           {subheader}
         </label>
