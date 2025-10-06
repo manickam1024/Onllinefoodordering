@@ -1,0 +1,8 @@
+IF YOU FACE THE Welcome
+Firebase Hosting Setup Complete
+You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!
+
+THIS ERROR/DEFAULT PAGE WHEN YOU DEPLOY YOUR APP JUST DELETE THE EXISTING DIST FOLDER 
+NPM START
+FIREBASE DEPLOY
+IT WILL WORK

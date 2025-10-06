@@ -15,11 +15,12 @@ const data = () => {
       )
       const json = await newdata.json()
 
+      console.log(json)
+
       setreslist(
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       )
-      console.log(json.data)
       setfilterd(
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants

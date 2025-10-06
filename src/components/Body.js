@@ -11,7 +11,6 @@ const Body = () => {
 
   const status = onlinestatus()
   const hover = '0.9'
-  console.log(status)
   const Opened = is_opened(<Card />)
 
   if (status == false) {
@@ -26,7 +25,7 @@ const Body = () => {
 
   return (
     <div
-      className="body overflow-x-hidden"
+      className="body overflow-x-hidden z-[0]"
       style={{ fontFamily: "'Montserrat', helvetica, arial, sans-serif" }}
     >
       <div className="search-filter m-9 flex justify-center w-[1200px] ">
@@ -59,15 +58,15 @@ const Body = () => {
           }}
         >
           <i className="material-icons p-3 inline-block">filter_alt</i>
-          <h1 className="inline-block relative top-[-5px]">filter</h1>
+          <h1 className="inline-block relative top-[-5px]">Top rated</h1>
         </button>
       </div>
 
-      <div className="card-container flex flex-wrap  w-[1350px] justify-center  relative left-[100px]  shadow-[0_0px_1px_1px_rgba(0,0,0,0.2)] pt-5 pb-5 rounded-2xl">
+      <div className="card-container flex flex-wrap  w-11/12 justify-center  relative left-[70px]  shadow-[0_0px_1px_1px_rgba(0,0,0,0.2)] pt-5 pb-5 rounded-2xl ">
         {filterd.map((d) => (
           <Link to={'/restuarants/' + d.info.id} key={d.info.id}>
-            {d.info.aggregatedDiscountInfoV3?.header ? (
-              <Opened resdata={d} />
+            {d.info ? ( //to just make the on hover work i did this dummy condition or else the condition is(d.info.aggregatedDiscountInfoV3?.header)
+              <Opened resdata={d} key={d.info.id} />
             ) : (
               <Card resdata={d} key={d.info.id} />
             )}
@@ -78,3 +77,6 @@ const Body = () => {
   )
 }
 export default Body
+
+const sum = toString(123499)
+console.log(sum)

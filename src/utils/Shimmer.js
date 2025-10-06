@@ -2,7 +2,10 @@ export const Shimmer = () => {
   const cards = []
   for (let index = 0; index < 10; index++) {
     cards.push(
-      <div className="card w-[280px] h-[237px] overflow-hidden m-6   rounded-xl hover:scale-[0.9]   bg-slate-100 ">
+      <div
+        className="card w-[280px] h-[237px] overflow-hidden m-6   rounded-xl hover:scale-[0.9]   bg-slate-100 "
+        key={index}
+      >
         {' '}
         <div className="block w-[350px] h-[60px] bg-white trn rotate-[-60deg] relative top-20 animate-shimmer "></div>
       </div>

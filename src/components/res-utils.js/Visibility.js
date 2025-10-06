@@ -13,11 +13,14 @@ const Visibility = (props) => {
       {m.card.card.itemCards && (
         <>
           <div
-            className="recom-head h-[auto] w-[800px] shadow-md mb-10 p-5 cursor-pointer"
+            className="recom-head h-[auto] w-[840px] shadow-md mb-10 p-5 cursor-pointer sh"
             onClick={Handle}
           >
-            <span className=" font-semibold pb-3">{m.card?.card?.title}</span>
-            {isvisible && <Itemlist m={m} veg={veg} />}
+            <span className=" font-semibold  ">{m.card?.card?.title}</span>
+            <div className="recom-head h-[auto] w-[800px]  cursor-pointer ">
+              {' '}
+              {isvisible && <Itemlist m={m} veg={veg} />}
+            </div>
           </div>
         </>
       )}

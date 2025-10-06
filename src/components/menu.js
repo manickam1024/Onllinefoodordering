@@ -4,6 +4,7 @@ const Menu = (props) => {
   const { resinfo, veg } = props
   const [showindex, setshowindex] = useState(null)
   const menu = resinfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards
+  console.log(menu)
   return (
     <div className="menu ">
       {menu.map((m, index) => {

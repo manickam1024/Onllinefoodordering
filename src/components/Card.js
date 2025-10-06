@@ -7,12 +7,7 @@ const Card = (props) => {
   const imgid = card + cloudinaryImageId
 
   return (
-    <div
-      className="card w-[280px] h-[237px] overflow-hidden m-6  rounded-xl   shadow-[0_0px_1px_1px_rgba(0,0,0,0.2)] "
-      style={{
-        fontFamily: "'Montserrat', helvetica, arial, sans-serif",
-      }}
-    >
+    <>
       <div className="img ">
         <img
           src={imgid}
@@ -30,7 +25,7 @@ const Card = (props) => {
         </div>
         <h3 className="cuisine text-xs">{cuisines.join(',')}</h3>
       </div>
-    </div>
+    </>
   )
 }
 

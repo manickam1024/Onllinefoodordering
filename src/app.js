@@ -10,18 +10,22 @@ import Profile from './components/profile'
 import Cart from './components/Cart'
 import { Shimmer_res } from './utils/Shimmer_res'
 import context from './utils/context'
+import { Provider } from 'react-redux'
+import store from './redux/storecongfig'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 export const App = () => (
   //modifying context value dynamically by fetching "mani " from login
-  <context.Provider value={{ username: 'mani' }}>
-    <div className="App">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  </context.Provider>
+  <Provider store={store}>
+    <context.Provider value={{ username: 'mani' }}>
+      <div className="App">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </context.Provider>
+  </Provider>
 )
 
 const Restaurants = lazy(() => import('./components/Restaurant'))

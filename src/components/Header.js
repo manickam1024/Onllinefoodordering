@@ -2,14 +2,16 @@ import { useEffect, useState, useContext } from 'react'
 import { IMG_LOGO } from '../utils/srcs'
 import { Link } from 'react-router-dom'
 import context from '../utils/context'
+import { useSelector } from 'react-redux'
 const Header = () => {
   const [s, news] = useState('login')
 
   const d = useContext(context)
+  const read = useSelector((store) => store.cart.items)
 
   return (
     <div
-      className="flex justify-between items-center shadow-sm shadow-[0px_1px_1px_1px_rgba(0, 0, 0, 0.2)]"
+      className="flex justify-between items-center shadow-sm absoulte top-0 z-[2] bg-white"
       style={{ fontFamily: "'Montserrat', helvetica, arial, sans-serif" }}
     >
       <div className="flex items-center relative left-3">
@@ -25,16 +27,6 @@ const Header = () => {
 
       <div className="nav-items relative right-140">
         <ul className="flex justify-between m-3 p-4 font-semibold ">
-          <li className="px-10 ">
-            <i className="material-icons relative top-1.5 right-1 "> passkey</i>
-            <a
-              onClick={() => {
-                s === 'login' ? news('logout') : news('login')
-              }}
-            >
-              {s}
-            </a>
-          </li>
           <li className="px-10">
             <i className="material-icons material-icons relative top-1.5 right-1">
               home
@@ -55,17 +47,10 @@ const Header = () => {
               shopping_cart
             </i>
             <Link to="/Cart">cart</Link>
+            <span className="pl-3 text-orange-950">{read.length}</span>
           </li>
 
-          <li className="px-10">
-            <i className="material-icons material-icons relative top-1.5 right-1">
-              {' '}
-              person{' '}
-            </i>
-            <Link to="/Profile">Profiles</Link>
-          </li>
-
-          <li className="pt-[6px] text-orange-400">Welcome {d.username}!</li>
+          <li className="pt-[6px] text-blue-600">Welcome {d.username}!</li>
         </ul>
       </div>
     </div>

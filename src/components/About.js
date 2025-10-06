@@ -28,16 +28,13 @@ class About extends React.Component {
         <div>
           <h1>About Us</h1>
           <p>
-            React is a food delivery app built using React.js and Material-UI.
+            React is a food delivery app built using React.js and tailwind css.
             It provides a list of restaurants, their menus, and customer
             reviews.
           </p>
         </div>
 
         <div>
-          {/* <Mani name={'mani'} />
-          <Mani name={'ramya'} /> */}
-
           <div> {this.state.userInfo.name}</div>
           <div> {this.state.userInfo.bio}</div>
         </div>

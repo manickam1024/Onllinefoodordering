@@ -7,10 +7,9 @@ import Offers from './res-utils.js/Offers'
 import Summary from './res-utils.js/Res-summary'
 import Menu from './menu'
 
-import Itemlist from './res-utils.js/Itemlist'
 const Restaurants = () => {
   const resid = useParams().resid
-  const [veg, setveg] = useState(true)
+  const [veg, setveg] = useState(false)
 
   const resinfo = userestaurant(resid)
 
